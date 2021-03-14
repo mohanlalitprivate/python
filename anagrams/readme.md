@@ -2,9 +2,9 @@
 ## Requirements
 
 - Python 3.0 or latest
-- ```dictionary.txt``` file in the same folder as the anagram.py file
-- For example you can create a dir 'src' then copy the file anagram.py and dictionary.txt into that dir
-- From 'src' dir (above step)```> python anagram.py``` 
+- ```yourfilename``` Any file which has words in it, with assumption of each line containing exactly one word.
+- Make sure to provide the exact file path at the run time (file could be in sub dir, in same dir or any other dir)
+- Example from 'src' dir (above step)```> python anagram.py path/to/your/file``` 
     (assuming you have set the path to invoke Python 3 using this command)
     
 - Dir 'tests' contains tests, hence the file requirements.txt and tox.ini
