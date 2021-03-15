@@ -22,3 +22,23 @@
 - $> workon temp
 - And after switching to that env, run ```pip install -r requirements.txt```
 - To run test simply type ```tox``` or ```py.test``` from 'tests' dir
+
+# To run as server
+- Run ```python app.py```
+- Server listens on port 5000
+- Go to localhost:5000
+- To find anagrams api url is ```http://localhost:5000/anagrams/<your-word>```
+- Example ```http://localhost:5000/anagrams/stop```
+
+# To create a docker image
+- Modify ```app.py```
+- Comment out ```app.run(port=5000)```
+- Uncomment ```app.run(host='0.0.0.0')```
+- Create docker image
+- Go to folder ```anagrams``` this is where the Dockerfile is
+- run ```docker build --tag python-anagram-docker .```
+- Tag it ```docker build --tag python-anagram-docker .```
+- In case you want to version it ```docker tag python-anagram-docker:latest python-anagram-docker:v1.0.0```
+- Run ```docker run --publish 5000:5000 --name python-anagram-container -d python-anagram-docker```
+- To stop docker ```docker stop python-anagram-container```
+- To start again ```docker start python-anagram-container```
