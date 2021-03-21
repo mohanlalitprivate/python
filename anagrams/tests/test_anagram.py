@@ -2,7 +2,7 @@ from unittest import TestCase
 import sys, os
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
-from src import anagrams
+from src import anagrams_finder
 
 
 class AnagramTestCase(TestCase):
@@ -13,10 +13,10 @@ class AnagramTestCase(TestCase):
         self.anagram_exists = ('\n'.join(a for a in anagram_list))
 
     def test_find_anagrams(self):
-        returned_anagrams = anagrams.find_anagrams(self.anagram_exists, "stop")
+        returned_anagrams = anagrams_finder.find_anagrams(self.anagram_exists, "stop")
         self.assertEqual({'stop', 'tops', 'post', 'spot'}, returned_anagrams)
-        self.assertEqual(set(), anagrams.find_anagrams(self.anagram_exists, "stopper"))
-        self.assertEqual(set(), anagrams.find_anagrams(self.anagram_exists, "sto"))
-        self.assertEqual({'stopp'}, anagrams.find_anagrams(self.anagram_exists, "stopp"))
-        self.assertEqual(set(), anagrams.find_anagrams(self.anagram_exists, "s"))
-        self.assertEqual(set(), anagrams.find_anagrams(self.anagram_exists, ""))
+        self.assertEqual(set(), anagrams_finder.find_anagrams(self.anagram_exists, "stopper"))
+        self.assertEqual(set(), anagrams_finder.find_anagrams(self.anagram_exists, "sto"))
+        self.assertEqual({'stopp'}, anagrams_finder.find_anagrams(self.anagram_exists, "stopp"))
+        self.assertEqual(set(), anagrams_finder.find_anagrams(self.anagram_exists, "s"))
+        self.assertEqual(set(), anagrams_finder.find_anagrams(self.anagram_exists, ""))

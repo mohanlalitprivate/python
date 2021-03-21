@@ -1,15 +1,6 @@
 from collections import Counter
 
 
-def read_words_from_file(file_name):
-    try:
-        with open(file_name, 'r') as file:
-            return file.read().lower()
-    except FileNotFoundError:
-        print(f'Could not find file {file_name}, please check the file path')
-        exit(-1)
-
-
 def find_anagrams(dictionary_words, user_word):
     user_word_char_count = Counter(user_word)
     found_anagrams = set()

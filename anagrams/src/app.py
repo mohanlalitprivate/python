@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
-from anagrams_finder import read_words_from_file, find_anagrams
+from anagrams_loader import read_words_from_file
+from anagrams_finder import  find_anagrams
 
 app = Flask(__name__)
 

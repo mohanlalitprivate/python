@@ -13,6 +13,7 @@ RUN pip install -r requirements.txt
 # copy the content of the local src directory to the working directory
 COPY src/app.py .
 COPY src/anagrams_finder.py .
+COPY src/anagrams_loader.py .
 COPY src/dictionary.txt .
 # command to run on container start
 CMD [ "python", "./app.py" ]
